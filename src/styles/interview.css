@@ -1,0 +1,388 @@
+/* ============================= */
+/* Interview Practice Page */
+/* ============================= */
+
+.interview-page {
+  width: 100%;
+}
+
+/* Header */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 42px;
+  margin: 0 0 8px;
+  color: #102a43;
+}
+
+.page-header p {
+  font-size: 20px;
+  color: #5b7188;
+  margin: 0;
+}
+
+/* ============================= */
+/* Start Interview Card */
+/* ============================= */
+
+.interview-card {
+  background: white;
+  border-radius: 28px;
+  padding: 42px 44px;
+  margin-bottom: 55px;
+  box-shadow: 0 12px 30px rgba(30, 50, 90, 0.08);
+}
+
+.interview-card h2 {
+  font-size: 30px;
+  color: #102a43;
+  margin: 0 0 8px;
+}
+
+.interview-description {
+  font-size: 18px;
+  color: #58708a;
+  margin-bottom: 30px;
+}
+
+/* Input + Start Button */
+
+.interview-input-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.interview-input-row input {
+  flex: 1;
+  height: 68px;
+  border: 1px solid #d5dbea;
+  border-radius: 18px;
+  padding: 0 24px;
+  font-size: 18px;
+  outline: none;
+  color: #263b53;
+  background: white;
+  box-sizing: border-box;
+}
+
+.interview-input-row input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.interview-input-row button {
+  min-width: 220px;
+  border: none;
+  border-radius: 18px;
+  background: #5b55e8;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.interview-input-row button:hover {
+  background: #4c46d8;
+  transform: translateY(-1px);
+}
+
+/* ============================= */
+/* Example Buttons */
+/* ============================= */
+
+.interview-examples {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.interview-examples span {
+  font-size: 17px;
+  color: #536b84;
+  margin-right: 2px;
+}
+
+.interview-examples button {
+  background: #f5f6ff;
+  border: 1px solid #cbd2ff;
+  color: #5149df;
+  border-radius: 22px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.interview-examples button:hover {
+  background: #e9e8ff;
+  transform: translateY(-1px);
+}
+
+/* ============================= */
+/* Why Practice Section */
+/* ============================= */
+
+.interview-benefits {
+  margin-bottom: 40px;
+}
+
+.interview-benefits > h2 {
+  font-size: 30px;
+  color: #102a43;
+  margin: 0 0 28px;
+}
+
+.interview-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.interview-benefit-card {
+  background: white;
+  border-radius: 24px;
+  padding: 38px 28px;
+  text-align: center;
+  min-height: 170px;
+  box-shadow: 0 10px 25px rgba(30, 50, 90, 0.07);
+}
+
+.interview-benefit-card span {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 18px;
+}
+
+.interview-benefit-card h3 {
+  font-size: 22px;
+  color: #102a43;
+  margin: 0 0 12px;
+}
+
+.interview-benefit-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #60758d;
+  margin: 0;
+}
+
+/* ============================= */
+/* Active Interview */
+/* ============================= */
+
+.active-interview {
+  background: white;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 12px 30px rgba(30, 50, 90, 0.08);
+}
+
+.interview-progress {
+  display: inline-block;
+  background: #eeedff;
+  color: #5149df;
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Question */
+
+.question-card {
+  border: 1px solid #e1e4ef;
+  border-radius: 22px;
+  padding: 32px;
+}
+
+.question-card h2 {
+  color: #5149df;
+  margin-top: 0;
+}
+
+.question-card h3 {
+  font-size: 22px;
+  color: #102a43;
+}
+
+.question-text {
+  font-size: 21px;
+  line-height: 1.5;
+  color: #263b53;
+  margin-bottom: 25px;
+}
+
+.question-card textarea {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 1px solid #d5dbea;
+  border-radius: 16px;
+  padding: 18px;
+  font-size: 17px;
+  font-family: inherit;
+  outline: none;
+}
+
+.question-card textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* Submit */
+
+.submit-answer-button,
+.next-question-button,
+.interview-result button {
+  margin-top: 20px;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  background: #5b55e8;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-answer-button:hover,
+.next-question-button:hover,
+.interview-result button:hover {
+  background: #4c46d8;
+}
+
+/* ============================= */
+/* Feedback */
+/* ============================= */
+
+.feedback-box {
+  margin-top: 25px;
+  background: #f7f8fc;
+  border-radius: 18px;
+  padding: 25px;
+  border-left: 5px solid #6366f1;
+}
+
+.feedback-box h3 {
+  margin-top: 0;
+  color: #102a43;
+}
+
+.feedback-box p {
+  color: #4f647a;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.suggested-answer {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.suggested-answer h4 {
+  color: #5149df;
+  margin-top: 0;
+}
+
+/* Exit */
+
+.back-interview-button {
+  margin-top: 20px;
+  border: none;
+  background: transparent;
+  color: #5149df;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* Result */
+/* ============================= */
+
+.interview-result {
+  background: white;
+  border-radius: 28px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(30, 50, 90, 0.08);
+}
+
+.result-icon {
+  font-size: 65px;
+}
+
+.interview-result h2 {
+  font-size: 32px;
+  color: #102a43;
+}
+
+.interview-result p {
+  color: #60758d;
+  font-size: 18px;
+}
+
+.score-box {
+  display: inline-block;
+  background: #f2f1ff;
+  padding: 25px 50px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.score-box h3 {
+  margin: 0 0 10px;
+  color: #5149df;
+}
+
+.score-box strong {
+  font-size: 38px;
+  color: #102a43;
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+
+@media (max-width: 1000px) {
+  .interview-benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .interview-input-row {
+    flex-direction: column;
+  }
+
+  .interview-input-row button {
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .interview-card,
+  .active-interview,
+  .interview-result {
+    padding: 25px;
+  }
+
+  .interview-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 32px;
+  }
+}

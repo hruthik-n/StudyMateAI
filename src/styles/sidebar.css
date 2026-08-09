@@ -1,0 +1,355 @@
+/* =========================================
+   SIDEBAR - BASIC
+   ========================================= */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #ffffff;
+  color: #4f5d75;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-right: 1px solid #eeeeee;
+
+  box-sizing: border-box;
+
+  z-index: 1000;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================
+   SIDEBAR SCROLLBAR
+   ========================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+
+/* =========================================
+   SIDEBAR LOGO
+   ========================================= */
+
+.sidebar-logo {
+  padding: 20px 20px 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #333333;
+}
+
+.sidebar-logo span {
+  font-size: 28px;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 10px 12px;
+
+  flex: 1;
+}
+
+
+/* =========================================
+   NAV ITEM
+   ========================================= */
+
+.nav-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #4f5d75;
+
+  font-size: 16px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Icon */
+
+.nav-item span {
+  width: 22px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+}
+
+
+/* Hover */
+
+.nav-item:hover {
+  background: #f0efff;
+  color: #667eea;
+
+  transform: translateX(2px);
+}
+
+
+/* Active */
+
+.nav-item.active {
+  background: #e9e7ff;
+  color: #5b6fe8;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SIDEBAR BOTTOM
+   ========================================= */
+
+.sidebar-bottom {
+  padding: 12px;
+
+  margin-top: auto;
+
+  background: #ffffff;
+
+  transition: background-color 0.3s ease;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+   ========================================= */
+
+.logout-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #d9534f;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.logout-button span {
+  width: 22px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logout-button:hover {
+  background: #fff0f0;
+
+  color: #c0392b;
+}
+
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+body.dark-mode .sidebar {
+  background: #171624 !important;
+
+  color: #ffffff !important;
+
+  border-right: 1px solid #29283a !important;
+}
+
+
+/* Dark scrollbar */
+
+body.dark-mode .sidebar::-webkit-scrollbar-thumb {
+  background: #44435a;
+}
+
+body.dark-mode .sidebar::-webkit-scrollbar-thumb:hover {
+  background: #5a5875;
+}
+
+
+/* Dark logo */
+
+body.dark-mode .sidebar-logo {
+  color: #ffffff !important;
+}
+
+
+/* Dark navigation */
+
+body.dark-mode .sidebar-nav {
+  background: transparent;
+}
+
+
+/* Dark nav items */
+
+body.dark-mode .sidebar .nav-item {
+  background: transparent !important;
+
+  color: #d9d9e8 !important;
+}
+
+
+/* Dark hover */
+
+body.dark-mode .sidebar .nav-item:hover {
+  background: #272638 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Dark active item */
+
+body.dark-mode .sidebar .nav-item.active {
+  background: #34304f !important;
+
+  color: #ffffff !important;
+
+  font-weight: 600;
+}
+
+
+/* Dark bottom */
+
+body.dark-mode .sidebar-bottom {
+  background: #171624 !important;
+}
+
+
+/* Dark logout */
+
+body.dark-mode .sidebar .logout-button {
+  background: transparent !important;
+
+  color: #ffb4b4 !important;
+}
+
+
+/* Dark logout hover */
+
+body.dark-mode .sidebar .logout-button:hover {
+  background: #352326 !important;
+
+  color: #ffcccc !important;
+}
+
+
+/* =========================================
+   MOBILE / SMALL SCREEN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .nav-item {
+    font-size: 15px;
+
+    padding: 11px 12px;
+  }
+
+  .sidebar-logo {
+    font-size: 20px;
+
+    padding: 18px;
+  }
+
+}
+
+
+/* =========================================
+   EXTRA DARK MODE SAFETY
+   ========================================= */
+
+body.dark-mode .sidebar *,
+body.dark-mode .sidebar-bottom * {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}

@@ -1,0 +1,160 @@
+/* =========================================
+   AI TOOLS - DARK MODE
+========================================= */
+
+body.dark-mode .suggestion-card,
+body.dark-mode .suggestion-box,
+body.dark-mode .prompt-card,
+body.dark-mode .suggestion {
+  background: #29293d !important;
+  color: #ffffff !important;
+  border-color: #44445a !important;
+}
+
+/* Text inside suggestion boxes */
+body.dark-mode .suggestion-card *,
+body.dark-mode .suggestion-box *,
+body.dark-mode .prompt-card *,
+body.dark-mode .suggestion * {
+  color: #ffffff !important;
+}
+
+/* Hover effect */
+body.dark-mode .suggestion-card:hover,
+body.dark-mode .suggestion-box:hover,
+body.dark-mode .prompt-card:hover,
+body.dark-mode .suggestion:hover {
+  background: #34344c !important;
+  border-color: #6366f1 !important;
+}
+/* =========================================
+   AI TOOLS - DARK MODE
+========================================= */
+
+body.dark-mode .suggestion-grid > * {
+  background: #29293d !important;
+  color: #ffffff !important;
+  border-color: #44445a !important;
+}
+
+/* Text inside suggestion boxes */
+body.dark-mode .suggestion-grid > * * {
+  color: #ffffff !important;
+}
+
+/* Hover */
+body.dark-mode .suggestion-grid > *:hover {
+  background: #34344c !important;
+  border-color: #6366f1 !important;
+}
+/* =========================
+   AI TOOLS PAGE
+========================= */
+
+.ai-tools-page {
+  color: white;
+}
+
+/* AI heading */
+.ai-tools-page h1,
+.ai-tools-page h2,
+.ai-tools-page h3 {
+  color: white;
+}
+
+.ai-tools-page p {
+  color: #c7c7d9;
+}
+
+/* =========================
+   CHAT AREA
+========================= */
+
+.chat-container {
+  background: #1e1e2e;
+  color: white;
+}
+
+/* =========================
+   USER MESSAGE
+========================= */
+
+.user-message {
+  background: #6366f1;
+  color: white !important;
+}
+
+/* =========================
+   AI MESSAGE
+========================= */
+
+.ai-message {
+  background: #f1f2f6;
+  color: #1f2937 !important;
+}
+
+.ai-message p,
+.ai-message span,
+.ai-message div {
+  color: #1f2937 !important;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input {
+  background: #29293d;
+  color: white;
+  border: 1px solid #77778c;
+}
+
+.chat-input::placeholder {
+  color: #b8b8c8;
+}
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.send-button {
+  background: #6366f1;
+  color: white;
+  border: none;
+}
+
+.send-button:hover {
+  background: #4f46e5;
+}
+
+/* =========================
+   SUGGESTION BUTTONS
+========================= */
+
+.suggestion-grid button {
+  background: #f1f2f6;
+  color: #1f2937 !important;
+}
+
+.suggestion-grid button:hover {
+  background: #e5e7eb;
+}
+
+/* =========================
+   DARK MODE FIX
+========================= */
+
+body.dark-mode .ai-message {
+  background: #f1f2f6;
+  color: #1f2937 !important;
+}
+
+body.dark-mode .ai-message p,
+body.dark-mode .ai-message span,
+body.dark-mode .ai-message div {
+  color: #1f2937 !important;
+}
+
+body.dark-mode .user-message {
+  color: white !important;
+}

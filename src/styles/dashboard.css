@@ -1,0 +1,910 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.dashboard-top {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.dashboard-top .welcome-card {
+  flex: 2;
+}
+
+.dashboard-top .stats-container {
+  flex: 1;
+}
+.quick-tools {
+  margin-top: 25px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: .3s;
+  text-align: center;
+}
+
+.tool-card:hover {
+  transform: translateY(-6px);
+}
+
+.tool-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.tool-card h3 {
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  color: gray;
+  font-size: 14px;
+}
+
+.tool-card button {
+  margin-top: 12px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tool-card button:hover {
+  background: #4f46e5;
+}
+/* Welcome Card */
+
+.welcome-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(135deg,#6366F1,#8B5CF6);
+
+  color: white;
+
+  padding: 35px;
+
+  border-radius: 25px;
+
+  box-shadow: 0 12px 30px rgba(99,102,241,.25);
+}
+
+.welcome-content{
+    width:70%;
+}
+
+.badge{
+
+background:white;
+
+color:#6366F1;
+
+padding:8px 15px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:bold;
+
+display:inline-block;
+
+margin-bottom:20px;
+
+}
+
+.welcome-card h1{
+
+font-size:40px;
+
+margin-bottom:15px;
+
+}
+
+.welcome-card p{
+
+font-size:18px;
+
+opacity:.95;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+.welcome-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.primary-btn{
+
+background:white;
+
+color:#6366F1;
+
+padding:14px 24px;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+background:transparent;
+
+border:2px solid white;
+
+color:white;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+
+color:#6366F1;
+
+}
+
+.welcome-robot{
+
+font-size:130px;
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-10px);}
+
+100%{transform:translateY(0);}
+
+}
+/* Study Plan */
+
+.study-plan{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-top:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.section-header span{
+    color:#6366F1;
+    font-weight:bold;
+}
+
+.study-task{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px;
+
+margin-bottom:12px;
+
+border-radius:12px;
+
+background:#F8FAFC;
+
+transition:.3s;
+
+}
+
+.study-task:hover{
+
+background:#EEF2FF;
+
+transform:translateX(6px);
+
+}
+
+.study-task input{
+
+width:20px;
+
+height:20px;
+
+accent-color:#6366F1;
+
+}
+
+.study-task p{
+
+font-size:17px;
+
+font-weight:500;
+
+}
+.progress-card{
+    margin-top:25px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.progress-bar{
+
+width:100%;
+
+height:14px;
+
+background:#E5E7EB;
+
+border-radius:20px;
+
+margin:20px 0;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+width:80%;
+
+height:100%;
+
+background:linear-gradient(90deg,#6366F1,#8B5CF6);
+
+border-radius:20px;
+
+}
+
+.progress-info{
+
+display:flex;
+
+justify-content:space-between;
+
+font-weight:bold;
+
+}
+.recent-activity{
+margin-top:25px;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.activity-item{
+
+padding:15px;
+
+border-bottom:1px solid #eee;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.activity-item:last-child{
+
+border-bottom:none;
+
+}
+
+.activity-item:hover{
+
+padding-left:25px;
+
+color:#6366F1;
+
+}
+/* AI Study Tip */
+
+.ai-tip {
+  margin-top: 25px;
+  padding: 25px;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.ai-tip-icon {
+  font-size: 45px;
+}
+
+.ai-tip-content {
+  flex: 1;
+}
+
+.ai-tip-content h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #1e293b;
+}
+
+.ai-tip-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ai-tip-btn {
+  border: none;
+  background: #6366f1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ai-tip-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+/* =========================
+   MEMORY TRICKS PAGE
+========================= */
+
+.memory-page {
+  padding: 35px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.memory-header {
+  margin-bottom: 25px;
+}
+
+.memory-header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.memory-header p {
+  font-size: 18px;
+  color: #64748b;
+}
+
+/* Create Trick Card */
+
+.memory-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.memory-card h2 {
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.memory-card input {
+  width: 70%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+.memory-card input:focus {
+  border-color: #6366f1;
+}
+
+.memory-card button {
+  margin-left: 12px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #6366f1;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.memory-card button:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* Generated Result */
+
+.trick-result {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.trick-result h2 {
+  margin-bottom: 12px;
+}
+
+.trick-result p {
+  font-size: 17px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* Techniques */
+
+.memory-tips {
+  margin-top: 25px;
+}
+
+.memory-tips h2 {
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.tip-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: 0.3s;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tip-card span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tip-card h3 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.tip-card p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory-card input {
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .memory-page {
+    padding: 20px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-card input {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .memory-card button {
+    margin-left: 0;
+  }
+}
+/* =========================
+   DIAGRAM GENERATOR
+========================= */
+
+.diagram-page {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.page-header p {
+  font-size: 18px;
+  color: #64748b;
+}
+
+
+/* Generator */
+
+.diagram-generator {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  margin-bottom: 35px;
+}
+
+.diagram-generator h2 {
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.diagram-input {
+  display: flex;
+  gap: 15px;
+}
+
+.diagram-input input {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+.diagram-input input:focus {
+  border-color: #6366f1;
+}
+
+.diagram-input button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.diagram-input button:hover {
+  background: #4f46e5;
+}
+
+
+/* Examples */
+
+.example-section {
+  margin-bottom: 35px;
+}
+
+.example-section h2 {
+  margin-bottom: 20px;
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.example-card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.07);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.example-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(99,102,241,.15);
+}
+
+.example-card:first-letter {
+  font-size: 35px;
+}
+
+.example-card h3 {
+  margin: 12px 0 8px;
+}
+
+.example-card p {
+  color: #64748b;
+}
+
+
+/* Generated Diagram */
+
+.generated-diagram {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.generated-diagram h2 {
+  margin-bottom: 25px;
+}
+
+.diagram-box {
+  background: #f8fafc;
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.diagram-node {
+  display: inline-block;
+  background: white;
+  border: 2px solid #6366f1;
+  color: #111827;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.arrow {
+  font-size: 30px;
+  color: #6366f1;
+  margin: 12px;
+}
+
+.diagram-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+/* ============================= */
+/* Generated Diagram Flowchart */
+/* ============================= */
+
+.generated-diagram {
+  margin-top: 25px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.generated-diagram h2 {
+  margin-bottom: 25px;
+}
+
+.diagram-box {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 35px;
+  min-height: 450px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Main topic */
+.main-node {
+  min-width: 230px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Every diagram box */
+.diagram-node {
+  background: white;
+  border: 2px solid #6366f1;
+  border-radius: 14px;
+  padding: 16px 25px;
+
+  min-width: 200px;
+  text-align: center;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.diagram-node:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 32px;
+  color: #6366f1;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+/* Steps should be vertical */
+.diagram-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Add arrows between steps */
+.diagram-row .diagram-node:not(:last-child)::after {
+  content: "↓";
+
+  display: block;
+
+  font-size: 28px;
+  color: #6366f1;
+
+  margin-top: 14px;
+  margin-bottom: -5px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .diagram-box {
+    padding: 20px;
+  }
+
+  .diagram-node {
+    min-width: 160px;
+    font-size: 15px;
+  }
+
+}
+/* =========================================
+   GLOBAL DARK MODE FIX
+   ========================================= */
+
+body.dark-mode {
+  background: #10101a !important;
+  color: #ffffff !important;
+}
+
+/* Main page backgrounds */
+body.dark-mode .dashboard,
+body.dark-mode .dashboard-container,
+body.dark-mode .page-container,
+body.dark-mode .main-content,
+body.dark-mode .content {
+  background: #10101a !important;
+  color: #ffffff !important;
+}
+
+/* Common cards */
+body.dark-mode .card,
+body.dark-mode .subject-card,
+body.dark-mode .tool-card,
+body.dark-mode .feature-card,
+body.dark-mode .example-card,
+body.dark-mode .generated-diagram {
+  background: #1d1c2b !important;
+  color: #ffffff !important;
+}
+
+/* Diagram */
+body.dark-mode .diagram-box {
+  background: #252438 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .diagram-node {
+  background: #1d1c2b !important;
+  color: #ffffff !important;
+  border-color: #6366f1 !important;
+}
+
+body.dark-mode .example-card p {
+  color: #b9b7c9 !important;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #ffffff;
+}
+
+/* Paragraphs */
+body.dark-mode p {
+  color: #c8c6d8;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #252438 !important;
+  color: #ffffff !important;
+  border-color: #3a394d !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa8ba !important;
+}
+
+/* Buttons */
+body.dark-mode button {
+  color: #ffffff;
+}

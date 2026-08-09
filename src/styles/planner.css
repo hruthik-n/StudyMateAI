@@ -1,0 +1,73 @@
+/* =========================================
+   STUDY PLANNER - DARK MODE
+========================================= */
+
+/* Main planner cards */
+body.dark-mode .planner-card,
+body.dark-mode .plan-card,
+body.dark-mode .study-plan-card {
+  background: #1e1e2e !important;
+  color: white !important;
+  border-color: #44445a !important;
+}
+
+/* Statistics cards */
+body.dark-mode .stats-card {
+  background: #1e1e2e !important;
+  color: white !important;
+}
+
+/* Main plans container */
+body.dark-mode .planner-container,
+body.dark-mode .plans-container {
+  background: #1e1e2e !important;
+  color: white !important;
+}
+
+/* Headings */
+body.dark-mode .planner-container h1,
+body.dark-mode .planner-container h2,
+body.dark-mode .planner-container h3,
+body.dark-mode .plan-card h3 {
+  color: white !important;
+}
+
+/* Normal text */
+body.dark-mode .planner-container p,
+body.dark-mode .plan-card p,
+body.dark-mode .planner-card p {
+  color: #c5c5c5 !important;
+}
+
+/* Subject labels */
+body.dark-mode .plan-subject,
+body.dark-mode .subject-tag {
+  background: #34344c !important;
+  color: #a5b4fc !important;
+}
+
+/* Time and date */
+body.dark-mode .plan-time,
+body.dark-mode .plan-date {
+  color: #c5c5c5 !important;
+}
+
+/* Divider */
+body.dark-mode .plan-card hr,
+body.dark-mode .planner-card hr {
+  border-color: #44445a !important;
+}
+
+/* Inputs */
+body.dark-mode .planner-container input,
+body.dark-mode .planner-container textarea,
+body.dark-mode .planner-container select {
+  background: #29293d !important;
+  color: white !important;
+  border-color: #44445a !important;
+}
+
+body.dark-mode .planner-container input::placeholder,
+body.dark-mode .planner-container textarea::placeholder {
+  color: #aaa !important;
+}

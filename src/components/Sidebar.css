@@ -1,0 +1,461 @@
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #ffffff;
+  color: #333333;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 12px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border-right: 1px solid #eeeeee;
+
+  z-index: 1000;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+  margin-bottom: 18px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-logo span {
+  width: 32px;
+  min-width: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #333333;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  flex: 1;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 0 4px 0 0;
+}
+
+
+/* =========================================
+   NAVIGATION SCROLLBAR
+   ========================================= */
+
+.nav-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   NAVIGATION ITEM
+   ========================================= */
+
+.nav-menu .nav-item {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #53617a;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   NAVIGATION ICON
+   ========================================= */
+
+.nav-menu .nav-item .nav-icon {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 19px;
+
+  line-height: 1;
+}
+
+.nav-menu .nav-item .nav-text {
+  width: auto;
+  min-width: 0;
+
+  flex: 1;
+
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.nav-menu .nav-item:hover {
+  background: #f1efff;
+
+  color: #5d6ff5;
+}
+
+
+/* =========================================
+   ACTIVE
+   ========================================= */
+
+.nav-menu .nav-item.active {
+  background: #eeeaff;
+
+  color: #5b50e6;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SIDEBAR BOTTOM
+   ========================================= */
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding-top: 12px;
+  padding-bottom: 4px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   SETTINGS
+   ========================================= */
+
+.sidebar-bottom .nav-item {
+  width: 100%;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #53617a;
+
+  font-size: 16px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+.sidebar-bottom .nav-item .nav-icon {
+  width: 26px;
+  min-width: 26px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 19px;
+}
+.sidebar-bottom .nav-item .nav-text {
+  flex: 1;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BOTTOM HOVER
+   ========================================= */
+
+.sidebar-bottom .nav-item:hover {
+  background: #f1efff;
+
+  color: #5d6ff5;
+}
+
+
+/* =========================================
+   BOTTOM ACTIVE
+   ========================================= */
+
+.sidebar-bottom .nav-item.active {
+  background: #eeeaff;
+
+  color: #5b50e6;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   LOGOUT
+   ========================================= */
+
+.logout-button {
+  width: 100%;
+
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #d9534f;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+.logout-button:hover {
+  background: #fff0f0;
+}
+
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+body.dark-mode .sidebar {
+  background: #171624 !important;
+
+  color: #ffffff !important;
+
+  border-right: 1px solid #27263a !important;
+}
+
+
+/* Logo */
+
+body.dark-mode .sidebar-logo h2 {
+  color: #ffffff !important;
+}
+
+
+/* Navigation */
+
+body.dark-mode .sidebar .nav-item {
+  background: transparent !important;
+
+  color: #d9d9e8 !important;
+}
+
+
+/* Hover */
+
+body.dark-mode .sidebar .nav-item:hover {
+  background: #252338 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Active */
+
+body.dark-mode .sidebar .nav-item.active {
+  background: #34304f !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Bottom */
+
+body.dark-mode .sidebar-bottom {
+  background: #171624 !important;
+}
+
+
+/* Logout */
+
+body.dark-mode .sidebar .logout-button {
+  background: transparent !important;
+
+  color: #ffb4b4 !important;
+}
+
+
+/* Logout hover */
+
+body.dark-mode .sidebar .logout-button:hover {
+  background: #352326 !important;
+
+  color: #ffcccc !important;
+}
+
+
+/* =========================================
+   DARK MODE SCROLLBAR
+   ========================================= */
+
+body.dark-mode .nav-menu::-webkit-scrollbar-track {
+  background: #171624;
+}
+
+body.dark-mode .nav-menu::-webkit-scrollbar-thumb {
+  background: #3a394d;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 230px;
+  }
+
+  .sidebar-logo h2 {
+    font-size: 19px;
+  }
+
+  .nav-menu .nav-item,
+  .sidebar-bottom .nav-item {
+    font-size: 14px;
+
+    padding: 11px 12px;
+
+    gap: 10px;
+  }
+
+  .nav-menu .nav-item > span,
+  .sidebar-bottom .nav-item > span {
+    width: 24px;
+    min-width: 24px;
+
+    font-size: 17px;
+  }
+}

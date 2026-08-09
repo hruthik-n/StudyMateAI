@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fc;
+  color: #1f2937;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+/* =========================
+   GLOBAL DARK MODE
+========================= */
+
+body.dark-mode {
+  background: #12121c;
+  color: #ffffff;
+}
+
+/* Main content */
+body.dark-mode .main-content {
+  background: #12121c !important;
+  color: #ffffff !important;
+}
+
+/* Common page backgrounds */
+body.dark-mode .dashboard,
+body.dark-mode .page,
+body.dark-mode .ai-page,
+body.dark-mode .ai-container,
+body.dark-mode .content-container {
+  background: #12121c !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   COMMON CARDS
+========================= */
+
+body.dark-mode .card,
+body.dark-mode .subject-card,
+body.dark-mode .task-card,
+body.dark-mode .tool-card,
+body.dark-mode .stats-card,
+body.dark-mode .progress-card,
+body.dark-mode .quick-tools,
+body.dark-mode .recent-activity,
+body.dark-mode .example-card,
+body.dark-mode .generated-diagram,
+body.dark-mode .diagram-box {
+  background: #1e1e2e !important;
+  color: #ffffff !important;
+  border-color: #343449 !important;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff !important;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+body.dark-mode p {
+  color: #c5c5d0;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #29293d !important;
+  color: #ffffff !important;
+  border-color: #44445a !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa8b8 !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+body.dark-mode button {
+  color: #ffffff;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+body.dark-mode a {
+  color: #9da8ff;
+}
+
+/* =========================
+   DIAGRAM GENERATOR
+========================= */
+
+body.dark-mode .diagram-box {
+  background: #191925 !important;
+}
+
+body.dark-mode .diagram-node {
+  background: #272638 !important;
+  color: #ffffff !important;
+  border-color: #7770ff !important;
+}
+
+/* =========================
+   AI TOOLS
+========================= */
+
+body.dark-mode .chat-container,
+body.dark-mode .chat-box {
+  background: #1e1e2e !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .chat-input {
+  background: #29293d !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   LISTS / SECTIONS
+========================= */
+
+body.dark-mode .section,
+body.dark-mode .panel,
+body.dark-mode .container {
+  color: #ffffff;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+body.dark-mode table {
+  color: #ffffff;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #3b3b50 !important;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #12121c;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #3a394d;
+  border-radius: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #55536b;
+}
+/* =========================
+   FIX WHITE TEXT ON LIGHT ELEMENTS
+========================= */
+
+body.dark-mode .suggestion-grid button,
+body.dark-mode .suggestion-card,
+body.dark-mode .suggestion-box,
+body.dark-mode .prompt-card {
+  color: #1f2937 !important;
+}
+
+body.dark-mode .suggestion-grid button *,
+body.dark-mode .suggestion-card *,
+body.dark-mode .suggestion-box *,
+body.dark-mode .prompt-card * {
+  color: #1f2937 !important;
+}
+/* =========================
+   FIX BUTTON TEXT IN DARK MODE
+========================= */
+
+body.dark-mode .subject-card button {
+  color: #1f2937 !important;
+}
+
+body.dark-mode .subject-card button * {
+  color: #1f2937 !important;
+}

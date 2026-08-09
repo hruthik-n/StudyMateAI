@@ -1,0 +1,186 @@
+.settings-page {
+  padding: 35px 45px;
+  min-height: 100vh;
+  background: #f5f7ff;
+  box-sizing: border-box;
+}
+
+.settings-page h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #222;
+}
+
+.settings-subtitle {
+  color: #666;
+  font-size: 17px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.settings-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  max-width: 850px;
+}
+
+.settings-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-row:last-of-type {
+  border-bottom: none;
+}
+
+.setting-row h3 {
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.setting-row p {
+  margin: 0;
+  color: #777;
+}
+
+.setting-row input,
+.setting-row select {
+  width: 230px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.setting-row input:focus,
+.setting-row select:focus {
+  border-color: #667eea;
+}
+
+.save-btn,
+.password-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #667eea;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.save-btn:hover,
+.password-btn:hover {
+  background: #5568d9;
+}
+
+/* Toggle button */
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 27px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #ccc;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #667eea;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(23px);
+}
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+  background: #12121c;
+  color: white;
+}
+
+body.dark-mode .settings-page {
+  background: #12121c;
+  color: white;
+}
+
+body.dark-mode .settings-page h1 {
+  color: white;
+}
+
+body.dark-mode .settings-subtitle {
+  color: #bbbbbb;
+}
+
+body.dark-mode .settings-card {
+  background: #1e1e2e;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .settings-card h2 {
+  color: white;
+}
+
+body.dark-mode .setting-row {
+  border-bottom-color: #333344;
+}
+
+body.dark-mode .setting-row h3 {
+  color: white;
+}
+
+body.dark-mode .setting-row p {
+  color: #bbbbbb;
+}
+
+body.dark-mode .setting-row input,
+body.dark-mode .setting-row select {
+  background: #29293d;
+  color: white;
+  border-color: #44445a;
+}
+
+body.dark-mode .setting-row input::placeholder {
+  color: #aaaaaa;
+}

@@ -1,0 +1,56 @@
+/* =========================================
+   NOTES PAGE
+========================================= */
+
+.notes-page {
+  padding: 30px;
+}
+
+/* Note cards */
+.note-card {
+  background: white;
+  color: #1f2937;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .note-card {
+  background: #1e1e2e !important;
+  color: white !important;
+  border-color: #44445a !important;
+}
+
+body.dark-mode .note-card h1,
+body.dark-mode .note-card h2,
+body.dark-mode .note-card h3,
+body.dark-mode .note-card h4 {
+  color: white !important;
+}
+
+body.dark-mode .note-card p {
+  color: #c5c5c5 !important;
+}
+
+/* Search input */
+
+body.dark-mode .notes-search,
+body.dark-mode .notes-page input {
+  background: #29293d !important;
+  color: white !important;
+  border-color: #44445a !important;
+}
+
+body.dark-mode .notes-page input::placeholder {
+  color: #aaa !important;
+}
+
+/* Tags */
+
+body.dark-mode .note-tag {
+  background: #34344c !important;
+  color: #a5b4fc !important;
+}
