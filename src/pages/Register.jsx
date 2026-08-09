@@ -22,46 +22,58 @@ function Register() {
     });
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     if (
-      !formData.username ||
-      !formData.usn ||
-      !formData.email ||
-      !formData.branch ||
-      !formData.year ||
-      !formData.password ||
-      !formData.confirmPassword
+        !formData.username ||
+        !formData.usn ||
+        !formData.email ||
+        !formData.branch ||
+        !formData.year ||
+        !formData.password ||
+        !formData.confirmPassword
     ) {
-      alert("Please fill all the details");
-      return;
+        alert("Please fill all the details");
+        return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
+        alert("Passwords do not match");
+        return;
     }
 
-    // Save registered user
-    localStorage.setItem(
-      "registeredUser",
-      JSON.stringify({
-        username: formData.username,
-        usn: formData.usn,
-        email: formData.email,
-        branch: formData.branch,
-        year: formData.year,
-        password: formData.password,
-      })
-    );
+    try {
+        const response = await fetch("http://localhost:5000/api/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: formData.username,
+                email: formData.email,
+                password: formData.password,
+                usn: formData.usn,
+                branch: formData.branch,
+                semester: formData.year
+            })
+        });
 
-    alert("Registration successful! Please login.");
+        const data = await response.json();
 
-    // Go back to Login
-    navigate("/");
-  };
+        if (!response.ok) {
+            alert(data.message || "Registration failed");
+            return;
+        }
 
+        alert("Registration successful! Please login.");
+
+        navigate("/");
+    } catch (error) {
+        console.error("Registration error:", error);
+        alert("Unable to connect to the backend");
+    }
+};
   return (
     <div className="login-container">
       <div className="login-box register-box">
@@ -113,16 +125,16 @@ function Register() {
           </select>
 
           <select
-            name="year"
-            value={formData.year}
-            onChange={handleChange}
-          >
-            <option value="">Select Year</option>
-            <option value="1st Year">1st Year</option>
-            <option value="2nd Year">2nd Year</option>
-            <option value="3rd Year">3rd Year</option>
-            <option value="4th Year">4th Year</option>
-          </select>
+    name="year"
+    value={formData.year}
+    onChange={handleChange}
+>
+    <option value="">Select Year</option>
+    <option value="1">1st Year</option>
+    <option value="2">2nd Year</option>
+    <option value="3">3rd Year</option>
+    <option value="4">4th Year</option>
+</select>
 
           <input
             type="password"

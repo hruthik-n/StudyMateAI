@@ -9,32 +9,45 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    const savedUser = JSON.parse(
-      localStorage.getItem("registeredUser")
-    );
+    try {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: username.trim(),
+                password: password
+            })
+        });
 
-    // No registered account
-    if (!savedUser) {
-      alert("No account found. Please register first.");
-      return;
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message || "Login failed");
+            return;
+        }
+
+        // Save JWT token
+        localStorage.setItem("token", data.token);
+
+        // Save user information
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        // Keep your existing login state
+        localStorage.setItem("isLoggedIn", "true");
+
+        // Go to dashboard
+        navigate("/dashboard");
+
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Unable to connect to the backend");
     }
-
-    // Check username and password
-    if (
-      username.trim() === savedUser.username &&
-      password === savedUser.password
-    ) {
-      localStorage.setItem("isLoggedIn", "true");
-
-      navigate("/dashboard");
-    } else {
-      alert("Invalid username or password");
-    }
-  };
-
+};
   return (
     <div className="login-container">
       <div className="login-box">
