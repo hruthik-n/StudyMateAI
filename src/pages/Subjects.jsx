@@ -1,62 +1,50 @@
-import { useEffect, useState } from "react";
-import { useStudy } from "../context/StudyContext";
+import { useState } from "react";
 
 function Subjects() {
-  const defaultSubjects = [
-    {
-      id: 1,
-      icon: "🤖",
-      name: "Machine Learning",
-      notes: 12,
-      progress: 75,
-    },
-    {
-      id: 2,
-      icon: "💻",
-      name: "Full Stack Development",
-      notes: 8,
-      progress: 60,
-    },
-    {
-      id: 3,
-      icon: "🌐",
-      name: "Internet of Things",
-      notes: 10,
-      progress: 45,
-    },
-  ];
+  const [scheme, setScheme] = useState("");
+  const [branch, setBranch] = useState("");
+  const [semester, setSemester] = useState("");
 
-  const { subjects, setSubjects } = useStudy();
+  const [subjects, setSubjects] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
 
-  const [showForm, setShowForm] = useState(false);
-  const [subjectName, setSubjectName] = useState("");
-
-  // Add default subjects if there are no subjects
-  useEffect(() => {
-    if (!subjects || subjects.length === 0) {
-      setSubjects(defaultSubjects);
-    }
-  }, []);
-
-  // Add new subject
-  const addSubject = () => {
-    if (!subjectName.trim()) {
-      alert("Please enter a subject name");
+  const findSubjects = async () => {
+    if (!scheme || !branch || !semester) {
+      alert("Please select Scheme, Branch and Semester.");
       return;
     }
 
-    const newSubject = {
-      id: Date.now(),
-      icon: "📚",
-      name: subjectName.trim(),
-      notes: 0,
-      progress: 0,
-    };
+    try {
+      setLoading(true);
 
-    setSubjects([...subjects, newSubject]);
+      const token = localStorage.getItem("token");
 
-    setSubjectName("");
-    setShowForm(false);
+      const response = await fetch(
+        `http://localhost:5000/api/subjects/vtu?scheme=${scheme}&branch=${branch}&semester=${semester}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || "Failed to load subjects.");
+        return;
+      }
+
+      setSubjects(data);
+      setSearched(true);
+
+    } catch (error) {
+      console.error("Subject fetch error:", error);
+      alert("Could not connect to backend.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,147 +54,193 @@ function Subjects() {
       <div className="subjects-header">
         <div>
           <h1>📚 My Subjects</h1>
-
           <p>
-            Organize your subjects and track your learning progress.
+            Select your VTU scheme, branch and semester to get your subjects.
           </p>
+        </div>
+      </div>
+
+      {/* VTU SETUP */}
+      <div className="add-subject-box">
+
+        <h2>🎓 Study Setup</h2>
+
+        <p>
+          Select your VTU details and we'll automatically load your subjects.
+        </p>
+
+        <div className="task-form-grid">
+
+          {/* SCHEME */}
+          <div>
+            <label>Scheme</label>
+
+            <select
+              value={scheme}
+              onChange={(e) => setScheme(e.target.value)}
+            >
+              <option value="">Select Scheme</option>
+              <option value="2022">2022 Scheme</option>
+              <option value="2021">2021 Scheme</option>
+              <option value="2018">2018 Scheme</option>
+            </select>
+          </div>
+
+          {/* BRANCH */}
+          <div>
+            <label>Branch</label>
+
+            <select
+              value={branch}
+              onChange={(e) => setBranch(e.target.value)}
+            >
+              <option value="">Select Branch</option>
+              <option value="CSE">
+                Computer Science & Engineering
+              </option>
+              <option value="ISE">
+                Information Science & Engineering
+              </option>
+              <option value="ECE">
+                Electronics & Communication Engineering
+              </option>
+              <option value="EEE">
+                Electrical & Electronics Engineering
+              </option>
+              <option value="ME">
+                Mechanical Engineering
+              </option>
+              <option value="CV">
+                Civil Engineering
+              </option>
+            </select>
+          </div>
+
+          {/* SEMESTER */}
+          <div>
+            <label>Semester</label>
+
+            <select
+              value={semester}
+              onChange={(e) => setSemester(e.target.value)}
+            >
+              <option value="">Select Semester</option>
+
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
+                <option key={sem} value={sem}>
+                  Semester {sem}
+                </option>
+              ))}
+            </select>
+          </div>
+
         </div>
 
         <button
-          className="add-subject-button"
-          onClick={() => setShowForm(true)}
+          className="save-subject-button"
+          onClick={findSubjects}
+          disabled={loading}
         >
-          + Add Subject
+          {loading ? "Loading..." : "🔍 Find My Subjects"}
         </button>
+
       </div>
 
+      {/* SUBJECTS */}
+      {searched && (
 
-      {/* ADD SUBJECT FORM */}
-      {showForm && (
-        <div className="add-subject-box">
+        <div className="subjects-section">
 
-          <h2>Add New Subject</h2>
-
-          <input
-            type="text"
-            placeholder="Enter subject name..."
-            value={subjectName}
-            onChange={(event) =>
-              setSubjectName(event.target.value)
-            }
-          />
-
-          <div className="subject-form-buttons">
-
-            <button
-              className="cancel-subject-button"
-              onClick={() => {
-                setShowForm(false);
-                setSubjectName("");
-              }}
-            >
-              Cancel
-            </button>
-
-            <button
-              className="save-subject-button"
-              onClick={addSubject}
-            >
-              Add Subject
-            </button>
-
-          </div>
-
-        </div>
-      )}
-
-
-      {/* SUBJECT CARDS */}
-      <div className="subjects-grid">
-
-        {subjects && subjects.length > 0 ? (
-          subjects.map((subject) => (
-
-            <div
-              className="subject-card"
-              key={subject.id}
-            >
-
-              {/* CARD TOP */}
-              <div className="subject-card-top">
-
-                <div className="subject-icon">
-                  {subject.icon}
-                </div>
-
-                <button
-                  className="subject-menu"
-                  title="More options"
-                >
-                  ⋮
-                </button>
-
-              </div>
-
-
-              {/* SUBJECT NAME */}
+          <div className="subjects-header">
+            <div>
               <h2>
-                {subject.name}
+                📖 Your VTU Subjects
               </h2>
 
-
-              {/* NOTES */}
-              <p className="subject-notes">
-                📝 {subject.notes} Notes
+              <p>
+                {scheme} Scheme • {branch} • Semester {semester}
               </p>
+            </div>
+          </div>
 
+          {subjects.length === 0 ? (
 
-              {/* PROGRESS */}
-              <div className="progress-info">
+            <div className="no-subjects">
+              <h2>😕 No subjects found</h2>
 
-                <span>
-                  Progress
-                </span>
+              <p>
+                We couldn't find subjects for this combination yet.
+              </p>
+            </div>
 
-                <strong>
-                  {subject.progress}%
-                </strong>
+          ) : (
 
-              </div>
+            <div className="subjects-grid">
 
-
-              {/* PROGRESS BAR */}
-              <div className="progress-bar">
+              {subjects.map((subject) => (
 
                 <div
-                  className="progress-fill"
-                  style={{
-                    width: `${subject.progress}%`,
-                  }}
-                ></div>
+                  className="subject-card"
+                  key={subject.id}
+                >
 
-              </div>
+                  <div className="subject-card-top">
 
+                    <div className="subject-icon">
+                      📚
+                    </div>
 
-              {/* OPEN BUTTON */}
-              <button className="open-subject-button">
-                Open Subject →
-              </button>
+                    <span>
+                      {subject.code}
+                    </span>
+
+                  </div>
+
+                  <h2>
+                    {subject.name}
+                  </h2>
+
+                  <p className="subject-notes">
+                    🎓 {subject.code}
+                  </p>
+
+                  <div className="subject-actions">
+
+                    {subject.vtu_circle_url && (
+                      <a
+                        href={subject.vtu_circle_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="open-subject-button"
+                      >
+                        🌐 VTU Circle
+                      </a>
+                    )}
+
+                    {subject.pdf_url && (
+                      <a
+                        href={subject.pdf_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="open-subject-button"
+                      >
+                        📄 Notes / PDF
+                      </a>
+                    )}
+
+                  </div>
+
+                </div>
+
+              ))}
 
             </div>
 
-          ))
-        ) : (
-          <div className="no-subjects">
-            <h2>📚 No Subjects Yet</h2>
+          )}
 
-            <p>
-              Click "+ Add Subject" to create your first subject.
-            </p>
-          </div>
-        )}
+        </div>
 
-      </div>
+      )}
 
     </div>
   );
